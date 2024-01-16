@@ -74,22 +74,37 @@ def custom_random_split(dataset: Dataset[T], lengths: Sequence[Union[int, float]
     indices = randperm(sum(lengths), generator=generator).tolist()  # type: ignore[arg-type, call-overload]
     return [CustomSubset(dataset, indices[offset - length : offset]) for offset, length in zip(_accumulate(lengths), lengths)]
 
-def plot_history(history, num_epochs):
+
+def plot_history(history, num_epochs=None):
+    if num_epochs is None:
+        #tensorflow
+        train_accuracy = [0.] + history['accuracy']
+        train_loss = history['loss']
+        val_accuracy = [0.] + history['val_accuracy']
+        val_loss = history['val_loss']
+        num_epochs = len(history['accuracy'])
+    else:
+        #pytorch
+        train_accuracy = [0.] + history['train']['accuracy']
+        train_loss = [0.] + history['train']['loss']
+        val_accuracy = [0.] + history['val']['accuracy']
+        val_loss = [0.] + history['val']['loss']
+
     plt.figure()
     plt.subplot(2, 1, 1)
-    plt.plot(history['train']['accuracy'], '-o', label='training set')
-    plt.plot(history['val']['accuracy'], '-o', label='validation set')
+    plt.plot(train_accuracy, '-o', label='training set')
+    plt.plot(val_accuracy, '-o', label='validation set')
     plt.ylim([0, 1.])
-    plt.xlim([0, num_epochs - 1])
+    plt.xlim([0, num_epochs])
     plt.legend()
     plt.ylabel('Accuracy')
     plt.setp(plt.gca(), xticklabels=[])
 
     plt.subplot(2, 1, 2)
-    plt.plot(history['train']['loss'], '-o', label='training set')
-    plt.plot(history['val']['loss'], '-o', label='validation set')
+    plt.plot(range(1, num_epochs+1), train_loss, '-o', label='training set')
+    plt.plot(range(1, num_epochs+1), val_loss, '-o', label='validation set')
     plt.ylim([0, 1.])
-    plt.xlim([0, num_epochs - 1])
+    plt.xlim([0, num_epochs])
     plt.legend()
     plt.xlabel('Epoch')
     plt.ylabel('Loss')

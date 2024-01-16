@@ -26,11 +26,22 @@ The remarkable success of neural networks is mostly due to two factors that have
 4. [Evaluating the performance of the fine-tuned model.](http://nbviewer.org/github.com/luis-agapito/AI_mototaxi/blob/main/notebooks/custom_model_verification.ipynb?flush_cache=True)
 
 We find that **model2** achieved ~95% of accuracy. For example, it correctly predicted mototaxi/no_mototaxi for all the 16 random pictures shown below.
+
+
 <img src="figures/model2.jpg">
 
 
-## Tensorflow-Keras implementation:
+## Tensorflow-Keras implementation [(notebook)](http://nbviewer.org/github/luis-agapito/AI_mototaxi/blob/main/notebooks/tensorflow_mototaxi.ipynb?flush_cache=True) :
+1. Custom model, case1.
+    - Splitting into train, validation, and test datasets.
+    - Augmenting the dataset.
+    - Training using `train_dataset`.
+
+2. Custom model, case2.
+    - Training using `train_dataset`.
+    - Validation using `test_dataset`.
 
 
 
+## References
 [^1]: [paper](https://arxiv.org/abs/1801.04381), [implementation](https://pytorch.org/hub/pytorch_vision_mobilenet_v2/)
