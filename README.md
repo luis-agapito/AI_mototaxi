@@ -31,7 +31,7 @@ We find that **model2** achieved ~95% of accuracy. For example, it correctly pre
 <img src="figures/model2.jpg">
 
 
-## Tensorflow-Keras implementation [(notebook)](http://nbviewer.org/github/luis-agapito/AI_mototaxi/blob/main/notebooks/tensorflow_mototaxi.ipynb?flush_cache=True) :
+## [Tensorflow-Keras implementation](http://nbviewer.org/github/luis-agapito/AI_mototaxi/blob/main/notebooks/tensorflow_mototaxi.ipynb?flush_cache=True) :
 1. Custom model, case1.
     - Splitting into train, validation, and test datasets.
     - Augmenting the dataset.
