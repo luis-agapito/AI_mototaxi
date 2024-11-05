@@ -21,9 +21,9 @@ The remarkable success of neural networks is mostly due to two factors that have
     - Building the Dataloader.
     - Inspecting the Dataloader: Verify the images comprising minibatches for each epoch.
 3. Customizing MobileNet [^1].
-    - [Evaluating performance of the default model.](http://nbviewer.org/github.com/luis-agapito/AI_mototaxi/blob/main/notebooks/default_model.ipynb?flush_cache=True)
-    - [Fine-tuning the model. Two cases: single and multiple layers.](http://nbviewer.org/github.com/luis-agapito/AI_mototaxi/blob/main/notebooks/custom_model_training.ipynb?flush_cache=True)
-4. [Evaluating the performance of the fine-tuned model.](http://nbviewer.org/github.com/luis-agapito/AI_mototaxi/blob/main/notebooks/custom_model_verification.ipynb?flush_cache=True)
+    - [Evaluating performance of the default model.](http://nbviewer.org/github/luis-agapito/AI_mototaxi/blob/main/notebooks/default_model.ipynb?flush_cache=True)
+    - [Fine-tuning the model. Two cases: single and multiple layers.](http://nbviewer.org/github/luis-agapito/AI_mototaxi/blob/main/notebooks/custom_model_training.ipynb?flush_cache=True)
+4. [Evaluating the performance of the fine-tuned model.](http://nbviewer.org/github/luis-agapito/AI_mototaxi/blob/main/notebooks/custom_model_verification.ipynb?flush_cache=True)
 
 We find that **model2** achieved ~95% of accuracy. For example, it correctly predicted mototaxi/no_mototaxi for all the 16 random pictures shown below.
 
